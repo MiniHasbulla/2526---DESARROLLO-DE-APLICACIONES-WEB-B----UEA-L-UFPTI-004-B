@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Web - Semana 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-laptop-code"></i> Mi Proyecto Web - Semana 3</h1>
+            <p class="subtitle">Aprendiendo HTML, CSS y desarrollo web</p>
+        </div>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#multimedia"><i class="fas fa-photo-video"></i> Multimedia</a></li>
+                <li><a href="#listas"><i class="fas fa-list"></i> Listas</a></li>
+                <li><a href="#tabla"><i class="fas fa-table"></i> Tabla</a></li>
+                <li><a href="#formulario"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Sección de encabezados y texto -->
+        <section id="inicio" class="section">
+            <h2><i class="fas fa-heading"></i> Encabezados y Texto Formateado</h2>
+            
+            <article>
+                <h3>Ejemplo de Encabezados HTML</h3>
+                <p>Parrafo normal que contiene texto sin formato especial. Los encabezados HTML son importantes para estructurar el contenido de una pagina web.</p>
+                
+                <p>Este parrafo tiene texto <strong>importante</strong> que debe destacarse visualmente. Además, también tiene texto en <em>cursiva para enfasis</em>.</p>
+                
+                <p>Podemos combinar formatos como <strong><em>negrita y cursiva juntas</em></strong> cuando queremos destacar algo aun mas.</p>
+            </article>
+        </section>
+
+        <!-- Sección de multimedia -->
+        <section id="multimedia" class="section">
+            <h2><i class="fas fa-photo-video"></i> Contenido Multimedia</h2>
+            
+            <article>
+                <h3>Imagen desde el repositorio</h3>
+                <div class="multimedia-container">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                         alt="Código HTML en un editor de texto" class="responsive-img">
+                    <p class="img-caption">Ejemplo</p>
+                </div>
+                
+                <h3>Video desde la carpeta del proyecto</h3>
+                <div class="multimedia-container">
+                    <video controls class="responsive-video">
+                        <!-- Para usar un video local, colócalo en la carpeta assets/videos/ -->
+                        <!-- <source src="assets/videos/ejemplo.mp4" type="video/mp4"> -->
+                        <!-- Video de ejemplo como placeholder -->
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-man-holding-a-camera-in-a-forest-and-filming-44300-large.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <p class="img-caption">Video de ejemplo</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sección de listas -->
+        <section id="listas" class="section">
+            <h2><i class="fas fa-list"></i> Ejemplo de Listas</h2>
+            
+            <article class="lists-container">
+                <div class="list-box">
+                    <h3>Lista Ordenada</h3>
+                    <ol>
+                        <li>Planificar la estructura y contenido</li>
+                        <li>Crear el archivo HTML con la estructura básica</li>
+                        <li>Añadir el contenido semántico (header, nav, main, etc.)</li>
+                        <li>Incorporar imágenes, videos y otros elementos multimedia</li>
+                        <li>Estilizar con CSS para mejorar la apariencia</li>
+                        <li>Probar la página en diferentes navegadores</li>
+                        <li>Publicar en un servidor web o GitHub Pages</li>
+                    </ol>
+                </div>
+                
+                <div class="list-box">
+                    <h3>Lista Desordenada (Tecnologías Web)</h3>
+                    <ul>
+                        <li>HTML5 - Estructura de la página</li>
+                        <li>CSS3 - Estilos y diseño</li>
+                        <li>JavaScript - Interactividad</li>
+                        <li>Git - Control de versiones</li>
+                        <li>GitHub - Alojamiento de repositorios</li>
+                        <li>VS Code - Editor de código</li>
+                        <li>Live Server - Servidor local de desarrollo</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sección de enlace externo -->
+        <section class="section">
+            <h2><i class="fas fa-external-link-alt"></i> Enlace Externo</h2>
+            <article>
+                <p>Visita la documentación oficial de MDN Web Docs para aprender más sobre desarrollo web:</p>
+                <a href="https://developer.mozilla.org/es/docs/Web" target="_blank" class="external-link">
+                    <i class="fas fa-external-link-alt"></i> MDN Web Docs - Recursos para desarrolladores
+                </a>
+            </article>
+        </section>
+
+        <!-- Sección de tabla -->
+        <section id="tabla" class="section">
+            <h2><i class="fas fa-table"></i> Tabla</h2>
+            
+            <article>
+                <h3>Lenguajes de Programación Web</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lenguaje</th>
+                            <th>Proposito Principal</th>
+                            <th>Dificultad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML</td>
+                            <td>Estructura de contenido</td>
+                            <td>Baja</td>
+                        </tr>
+                        <tr>
+                            <td>CSS</td>
+                            <td>Estilos y diseño</td>
+                            <td>Media</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>Interactividad y lógica</td>
+                            <td>Alta</td>
+                        </tr>
+                        <tr>
+                            <td>PHP</td>
+                            <td>Backend y servidor</td>
+                            <td>Media-Alta</td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td>Backend y analisis de datos</td>
+                            <td>Media</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <!-- Sección de formulario -->
+        <section id="formulario" class="section">
+            <h2><i class="fas fa-envelope"></i> Formulario de Contacto</h2>
+            
+            <article>
+                <h3>Envia tus datos para contactarnos</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="nombre"><i class="fas fa-user"></i> Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Correo electronico:</label>
+                        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje"><i class="fas fa-comment"></i> Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="intereses"><i class="fas fa-heart"></i> Intereses:</label>
+                        <select id="intereses" name="intereses">
+                            <option value="">Selecciona un interés</option>
+                            <option value="frontend">Desarrollo Frontend</option>
+                            <option value="backend">Desarrollo Backend</option>
+                            <option value="fullstack">Desarrollo Fullstack</option>
+                            <option value="diseno">Diseño Web</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="suscripcion" name="suscripcion">
+                        <label for="suscripcion">Suscribirse al boletin informativo</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Enviar Formulario
+                    </button>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-info-circle"></i> Informacion del Proyecto</h3>
+                    <p>Este proyecto fue creado como parte de la tarea de la Semana 3 de programacion web.</p>
+                    <p>Incluye todos los elementos solicitados: encabezados, texto formateado, etiquetas, multimedia, listas, enlaces, tablas y formularios.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-tools"></i> Tecnologias utilizadas</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Visual Studio Code</li>
+                        <li>Live Server Extension</li>
+                        <li>GitHub Pages</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fas fa-link"></i> Enlaces Rapidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#multimedia">Multimedia</a></li>
+                        <li><a href="#listas">Listas</a></li>
+                        <li><a href="#tabla">Tabla</a></li>
+                        <li><a href="#formulario">Formulario</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 |Desarrollado para la tarea de programación web</p>
+                <p class="github-link">
+                    <i class="fab fa-github"></i> Repositorio en GitHub: 
+                    <a href="https://github.com/tu-usuario/semana-3" target="_blank">https://github.com/tu-usuario/semana-3</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para manejar el envío del formulario -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulario enviado con exito');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
