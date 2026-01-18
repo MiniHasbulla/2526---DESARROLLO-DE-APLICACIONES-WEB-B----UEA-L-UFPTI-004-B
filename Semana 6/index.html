@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Interactivo con Validaciones</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-user-check"></i> Formulario de Registro</h1>
+            <p class="subtitle">Complete todos los campos para crear su cuenta</p>
+        </header>
+
+        <form id="registrationForm" novalidate>
+            <div class="form-group">
+                <label for="nombre">
+                    <i class="fas fa-user"></i> Nombre Completo:
+                </label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre completo" minlength="3">
+                <div class="error-message" id="nombre-error"></div>
+                <div class="hint">Mínimo 3 caracteres</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    <i class="fas fa-envelope"></i> Correo Electrónico:
+                </label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                <div class="error-message" id="email-error"></div>
+                <div class="hint">Formato: usuario@dominio.com</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">
+                    <i class="fas fa-lock"></i> Contraseña:
+                </label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Cree una contraseña segura">
+                    <button type="button" class="toggle-password" id="togglePassword">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <div class="error-message" id="password-error"></div>
+                <div class="hint">Mínimo 8 caracteres, con al menos un número y un carácter especial</div>
+                
+                <div class="password-strength">
+                    <div class="strength-bar">
+                        <div class="strength-fill" id="strengthFill"></div>
+                    </div>
+                    <span class="strength-text" id="strengthText">Seguridad de la contraseña</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">
+                    <i class="fas fa-lock"></i> Confirmar Contraseña:
+                </label>
+                <div class="password-container">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repita su contraseña">
+                    <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <div class="error-message" id="confirmPassword-error"></div>
+                <div class="hint">Debe coincidir con la contraseña ingresada</div>
+            </div>
+
+            <div class="form-group">
+                <label for="edad">
+                    <i class="fas fa-birthday-cake"></i> Edad:
+                </label>
+                <input type="number" id="edad" name="edad" placeholder="Ingrese su edad" min="1" max="120">
+                <div class="error-message" id="edad-error"></div>
+                <div class="hint">Debe ser mayor o igual a 18 años</div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="resetBtn" class="btn reset-btn">
+                    <i class="fas fa-redo"></i> Reiniciar Formulario
+                </button>
+                <button type="submit" id="submitBtn" class="btn submit-btn" disabled>
+                    <i class="fas fa-paper-plane"></i> Enviar Formulario
+                </button>
+            </div>
+
+            <div class="form-status">
+                <div class="status-message" id="statusMessage"></div>
+                <div class="valid-fields-count">
+                    Campos válidos: <span id="validCount">0</span>/5
+                </div>
+            </div>
+        </form>
+
+        <footer>
+            <p>Tarea de Programación Web - Formulario Interactivo con Validaciones</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
