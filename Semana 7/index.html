@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 7 - Lista de Productos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        
+        .controls {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .product-form input, .product-form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .product-form textarea {
+            height: 60px;
+            resize: vertical;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        #addProductBtn {
+            background-color: #2ecc71;
+        }
+        
+        #addProductBtn:hover {
+            background-color: #27ae60;
+        }
+        
+        .products-container {
+            margin-top: 20px;
+        }
+        
+        #productList {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .product-price {
+            font-size: 1.5em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .product-description {
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+        
+        .product-footer {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #95a5a6;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            #productList {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> SuperLista de Productos Dinamica</h1>
+        <p class="subtitle">Semana 7 - Deber Plantillas y DOM</p>
+        
+        <div class="controls">
+            <div class="product-form">
+                <h3>Agregar nuevo producto</h3>
+                <input type="text" id="productName" placeholder="Nombre del producto">
+                <input type="number" id="productPrice" placeholder="Precio" step="0.01">
+                <textarea id="productDescription" placeholder="Descripción del producto"></textarea>
+                <button id="addProductBtn">➕ Agregar Producto</button>
+            </div>
+            
+            <div>
+                <h3>Controles</h3>
+                <button id="clearListBtn">Limpiar la lista</button>
+                <button id="loadSampleBtn">Productos de ejemplo</button>
+                <p id="productCount">Productos en lista: 0</p>
+            </div>
+        </div>
+        
+        <div class="products-container">
+            <h2>Catalogo de Productos</h2>
+            <ul id="productList">
+                <!-- productos dinamicamente -->
+            </ul>
+        </div>
+        
+        <div class="product-footer">
+            <p><strong>Informatica - Semana 7:</strong> Renderizado dinamico con plantillas y manipulacion del DOM</p>
+        </div>
+    </div>
+
+    <!-- Template -->
+    <template id="productTemplate">
+        <li class="product-card">
+            <div class="product-name"></div>
+            <div class="product-price"></div>
+            <div class="product-description"></div>
+            <div class="product-footer">
+                Producto agregado: <span class="product-time"></span>
+            </div>
+        </li>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
