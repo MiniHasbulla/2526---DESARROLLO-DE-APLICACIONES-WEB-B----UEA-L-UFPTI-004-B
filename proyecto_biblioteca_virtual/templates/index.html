@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a la Biblioteca Virtual</h1>
+        <p class="subtitle">Tu espacio de conocimiento en línea</p>
+        
+        <div class="info-section">
+            <h2>Sobre nuestra biblioteca</h2>
+            <p>Ofrecemos acceso a miles de libros digitales, revistas académicas y recursos educativos.</p>
+        </div>
+        
+        <div class="search-section">
+            <h2>Buscar un libro</h2>
+            <p>Prueba nuestra ruta dinámica: <code>/libro/título-del-libro</code></p>
+            <p>Ejemplos:</p>
+            <ul>
+                <li><a href="/libro/cien años de soledad">/libro/cien años de soledad</a></li>
+                <li><a href="/libro/1984">/libro/1984</a></li>
+                <li><a href="/libro/don quijote">/libro/don quijote</a></li>
+            </ul>
+        </div>
+        
+        <div class="categories-section">
+            <h2>Categorías disponibles</h2>
+            <ul>
+                <li><a href="/categoria/novela">Novela</a></li>
+                <li><a href="/categoria/clasicos">Clásicos</a></li>
+                <li><a href="/categoria/poesia">Poesía</a></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>Biblioteca Virtual - Proyecto Semana 9</p>
+        </footer>
+    </div>
+</body>
+</html>
