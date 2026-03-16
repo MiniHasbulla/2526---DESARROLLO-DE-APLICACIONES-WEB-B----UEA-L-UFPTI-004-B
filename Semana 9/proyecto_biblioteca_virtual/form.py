@@ -8,3 +8,9 @@ class ProductoForm(FlaskForm):
     precio = FloatField('Precio', validators=[Optional()], default=0.0)
     cantidad = IntegerField('Cantidad', validators=[Optional()], default=0)
     submit = SubmitField('Guardar')
+    
+class UsuarioForm(FlaskForm):
+    nombre = StringField('Nombre completo', validators=[DataRequired(), Length(max=100)])
+    mail = StringField('Correo electrónico', validators=[DataRequired(), Length(max=100)])
+    password = StringField('Contraseña', validators=[DataRequired(), Length(max=255)])
+    submit = SubmitField('Guardar usuario')

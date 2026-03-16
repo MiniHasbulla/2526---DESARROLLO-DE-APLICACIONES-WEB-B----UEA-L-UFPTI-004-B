@@ -35,6 +35,17 @@
                 <li><a href="/categoria/poesia">Poesía</a></li>
             </ul>
         </div>
+
+<!-- NUEVA SECCIÓN: Opciones de inventario -->
+        <div class="inventory-section">
+            <h2>Opciones de inventario</h2>
+            <ul>
+                <li><a href="{{ url_for('inventario.index') }}">Ver libros en Base de Datos</a></li>
+                <li><a href="{{ url_for('inventario.leer_txt') }}">Ver archivo TXT</a></li>
+                <li><a href="{{ url_for('inventario.leer_json') }}">Ver archivo JSON</a></li>
+                <li><a href="{{ url_for('inventario.leer_csv') }}">Ver archivo CSV</a></li>
+            </ul>
+        </div>
         
         <footer>
             <p>Biblioteca Virtual - Proyecto Semana 9</p>

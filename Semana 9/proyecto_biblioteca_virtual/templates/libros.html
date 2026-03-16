@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Lista de Libros{% endblock %}
+{% block content %}
+<h1>Inventario de Libros</h1>
+
+<a href="{{ url_for('inventario.nuevo') }}" 
+   style="display: inline-block; padding: 10px 15px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 20px;">
+   ➕ Nuevo Libro
+</a>
+
+<table border="1" style="width: 100%; border-collapse: collapse;">
+    <tr style="background-color: #f2f2f2;">
+        <th style="padding: 10px;">ID</th>
+        <th style="padding: 10px;">Título</th>
+        <th style="padding: 10px;">Autor</th>
+        <th style="padding: 10px;">Precio</th>
+        <th style="padding: 10px;">Cantidad</th>
+        <th style="padding: 10px;">Acciones</th>
+    </tr>
+    {% for libro in productos %}
+    <tr>
+        <td style="padding: 10px;">{{ libro.id }}</td>
+        <td style="padding: 10px;">{{ libro.titulo }}</td>
+        <td style="padding: 10px;">{{ libro.autor }}</td>
+        <td style="padding: 10px;">${{ libro.precio }}</td>
+        <td style="padding: 10px;">{{ libro.cantidad }}</td>
+        <td style="padding: 10px;">
+            <a href="{{ url_for('inventario.editar_libro', id=libro.id) }}" style="color: #2196F3;">✏️ Editar</a>
+            |
+            <a href="{{ url_for('inventario.eliminar_libro', id=libro.id) }}" 
+               style="color: #f44336;"
+               onclick="return confirm('¿Estás seguro de eliminar este libro?')">
+               Eliminar
+            </a>
+        </td>
+    </tr>
+    {% else %}
+    <tr>
+        <td colspan="6" style="text-align: center; padding: 20px;">
+            No hay libros en el inventario
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

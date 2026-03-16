@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mi Proyecto Flask{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{% block title %}Biblioteca Virtual{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Mi Aplicación Flask</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('index') }}">Inicio</a></li>
-                <li><a href="{{ url_for('about') }}">Acerca de</a></li>
-                <li><a href="{{ url_for('productos') }}">Productos</a></li>
-                <li><a href="{{ url_for('clientes') }}">Clientes</a></li>
-                <li><a href="{{ url_for('facturas') }}">Facturas</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <nav>
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('inventario.index') }}">Libros</a>
+        <a href="{{ url_for('inventario.leer_txt') }}">Ver TXT</a>
+        <a href="{{ url_for('inventario.leer_json') }}">Ver JSON</a>
+        <a href="{{ url_for('inventario.leer_csv') }}">Ver CSV</a>
+    </nav>
     <main>
-        {% block content %}
-        <!-- Contenido específico de cada página -->
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
-
-    <footer>
-        <p>&copy; 2026 Mi Proyecto Flask. Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
