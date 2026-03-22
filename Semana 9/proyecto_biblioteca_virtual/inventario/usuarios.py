@@ -1,14 +1,18 @@
-from flask_sqlalchemy import SQLAlchemy
-from .bd import db  # Importa base de datos
+# inventario/usuarios.py
+from .bd import db
+from flask_login import UserMixin
 
-class Usuario(db.Model):
-    __tablename__ = 'usuarios'  # Nombre de la tabla en MySQL
+class Usuario(db.Model, UserMixin):
+    __tablename__ = 'usuarios'
     
-    # Columnas de la tabla
-    id_usuario = db.Column(db.Integer, primary_key=True)  # Número
-    nombre = db.Column(db.String(100), nullable=False)    # Nombre 
-    mail = db.Column(db.String(100), unique=True, nullable=False)  # Email
-    password = db.Column(db.String(255), nullable=False)  # Contraseña
+    id_usuario = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(100), nullable=False)
+    mail = db.Column(db.String(100), unique=True, nullable=False)
+    password = db.Column(db.String(255), nullable=False)
+    
+    # Flask-Login necesita un método get_id que devuelva el identificador
+    def get_id(self):
+        return str(self.id_usuario)
     
     def __repr__(self):
         return f'<Usuario {self.nombre}>'
