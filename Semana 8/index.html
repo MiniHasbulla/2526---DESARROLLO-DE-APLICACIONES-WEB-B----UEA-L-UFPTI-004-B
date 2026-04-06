@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Bootstrap + JS</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="h3 mb-0">Mi Proyecto Web</h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#productos">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#nosotros">Nosotros</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <!-- Sección del Carrusel -->
+        <section id="inicio" class="mb-5">
+            <h2 class="text-center mb-4">Galería de Imágenes</h2>
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://via.placeholder.com/800x400/007bff/ffffff?text=Imagen+1" class="d-block w-100" alt="Imagen 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Primera Imagen</h5>
+                            <p>Descripción de la primera imagen del carrusel.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/800x400/28a745/ffffff?text=Imagen+2" class="d-block w-100" alt="Imagen 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Segunda Imagen</h5>
+                            <p>Descripción de la segunda imagen del carrusel.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/800x400/dc3545/ffffff?text=Imagen+3" class="d-block w-100" alt="Imagen 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Tercera Imagen</h5>
+                            <p>Descripción de la tercera imagen del carrusel.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Botón de Alerta -->
+        <div class="text-center mb-5">
+            <button id="alertButton" class="btn btn-warning btn-lg">
+                <i class="bi bi-exclamation-triangle"></i> Haz clic para una alerta
+            </button>
+        </div>
+
+        <!-- Sección de Tabla -->
+        <section id="productos" class="mb-5">
+            <h2 class="text-center mb-4">Nuestros Productos</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Laptop Gamer</td>
+                            <td>Tecnología</td>
+                            <td>$1,200</td>
+                            <td>15</td>
+                            <td><span class="badge bg-success">Disponible</span></td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Smartphone Pro</td>
+                            <td>Tecnología</td>
+                            <td>$800</td>
+                            <td>8</td>
+                            <td><span class="badge bg-warning">Últimas unidades</span></td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>Auriculares Bluetooth</td>
+                            <td>Audio</td>
+                            <td>$150</td>
+                            <td>25</td>
+                            <td><span class="badge bg-success">Disponible</span></td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>Tablet Digital</td>
+                            <td>Tecnología</td>
+                            <td>$450</td>
+                            <td>0</td>
+                            <td><span class="badge bg-danger">Agotado</span></td>
+                        </tr>
+                        <tr>
+                            <td>005</td>
+                            <td>Smart Watch</td>
+                            <td>Wearables</td>
+                            <td>$300</td>
+                            <td>12</td>
+                            <td><span class="badge bg-success">Disponible</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección del Formulario -->
+        <section id="contacto" class="mb-5">
+            <h2 class="text-center mb-4">Formulario de Contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="contactForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre completo *</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                            <div class="invalid-feedback">
+                                Ingresa tu nombre completo.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico *</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingresa un correo electrónico válido.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono (opcional)</label>
+                            <input type="tel" class="form-control" id="telefono">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="asunto" class="form-label">Asunto</label>
+                            <select class="form-select" id="asunto">
+                                <option selected>Selecciona un asunto</option>
+                                <option value="consulta">Consulta general</option>
+                                <option value="soporte">Soporte técnico</option>
+                                <option value="ventas">Información de ventas</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje *</label>
+                            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, escribe tu mensaje.
+                            </div>
+                        </div>
+                        
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="terminos" required>
+                            <label class="form-check-label" for="terminos">
+                                Acepto los términos y condiciones *
+                            </label>
+                            <div class="invalid-feedback">
+                                Debes aceptar los términos y condiciones.
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">
+                                <i class="bi bi-send"></i> Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="formMessage" class="alert alert-success mt-3 d-none" role="alert">
+                        Mensaje enviado correctamente
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-3">Contacto</h5>
+                    <p>
+                        <i class="bi bi-geo-alt"></i> Av. Machala y Vaca de Castro, Quito<br>
+                        <i class="bi bi-envelope"></i> info@megaempresasigma.com<br>
+                        <i class="bi bi-telephone"></i> +593 99 123 4567
+                    </p>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5 class="mb-3">Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#inicio" class="text-white text-decoration-none">Inicio</a></li>
+                        <li><a href="#productos" class="text-white text-decoration-none">Productos</a></li>
+                        <li><a href="#contacto" class="text-white text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5 class="mb-3">Síguenos</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="bg-light">
+            
+            <div class="text-center">
+                <p class="mb-0">&copy; 2026 Mi Proyecto Web. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>

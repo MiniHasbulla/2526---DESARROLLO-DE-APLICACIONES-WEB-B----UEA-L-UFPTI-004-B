@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block content %}
+<h1>{{ titulo }}</h1>
+
+<form method="post" style="max-width: 500px;">
+    {{ form.hidden_tag() }}
+    
+    <div style="margin-bottom: 15px;">
+        {{ form.nombre.label }} (Título)<br>
+        {{ form.nombre(size=40, style="padding: 5px; width: 100%;") }}<br>
+        {% for error in form.nombre.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    
+    <div style="margin-bottom: 15px;">
+        {{ form.autor.label }}<br>
+        {{ form.autor(size=40, style="padding: 5px; width: 100%;") }}<br>
+        {% for error in form.autor.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    
+    <div style="margin-bottom: 15px;">
+        {{ form.precio.label }}<br>
+        {{ form.precio(style="padding: 5px; width: 100%;") }}<br>
+        {% for error in form.precio.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    
+    <div style="margin-bottom: 15px;">
+        {{ form.cantidad.label }}<br>
+        {{ form.cantidad(style="padding: 5px; width: 100%;") }}<br>
+        {% for error in form.cantidad.errors %}
+            <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </div>
+    
+    <div>
+        {{ form.submit(style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;") }}
+    </div>
+</form>
+
+<p style="margin-top: 20px;">
+    <a href="{{ url_for('inventario.index') }}">← Volver a la lista</a>
+</p>
+{% endblock %}

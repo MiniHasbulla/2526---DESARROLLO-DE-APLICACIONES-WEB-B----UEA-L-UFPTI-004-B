@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes Interactiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-images"></i> Galería de Imágenes</h1>
+            <p class="subtitle">Agrega, selecciona y elimina imágenes fácilmente</p>
+        </header>
+
+        <div class="controls">
+            <div class="input-group">
+                <input type="url" id="imageUrl" placeholder="Pega aquí la URL de una imagen...">
+                <button id="addButton" class="btn add-btn">
+                    <i class="fas fa-plus"></i> Agregar Imagen
+                </button>
+            </div>
+            
+            <div class="actions">
+                <button id="deleteButton" class="btn delete-btn" disabled>
+                    <i class="fas fa-trash"></i> Eliminar Imagen Seleccionada
+                </button>
+                <button id="clearButton" class="btn clear-btn">
+                    <i class="fas fa-broom"></i> Limpiar Galeria
+                </button>
+            </div>
+            
+            <div class="instructions">
+                <p><i class="fas fa-info-circle"></i> <strong>Instrucciones:</strong> Pega una URL de imagen → Haz clic en "Agregar Imagen" → Selecciona una imagen haciendo clic sobre ella → Elimina la seleccionada con el botón correspondiente.</p>
+            </div>
+        </div>
+
+        <div class="gallery" id="gallery">
+            <!-- Las imágenes se agregarán aquí dinámicamente -->
+            <div class="empty-gallery">
+                <i class="fas fa-image"></i>
+                <p>Tu galería esta vacia. Agrega tu primera imagen</p>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3><i class="fas fa-search"></i> Vista Previa</h3>
+            <div class="preview-container">
+                <div class="preview-placeholder" id="previewPlaceholder">
+                    <i class="fas fa-eye"></i>
+                    <p>Selecciona una imagen para verla en grande</p>
+                </div>
+                <img id="previewImage" class="preview-image" src="" alt="Vista previa">
+            </div>
+        </div>
+
+        <footer>
+            <p>Galería Interactiva - JavaScript | <span id="imageCount">0 imágenes</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

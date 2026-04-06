@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoría: {{ categoria }} - Biblioteca Virtual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Categoría: {{ categoria|capitalize }}</h1>
+        
+        <div class="books-list">
+            <h2>Libros disponibles:</h2>
+            <ul>
+                {% for libro in libros %}
+                <li><a href="/libro/{{ libro }}">{{ libro }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="actions">
+            <a href="/" class="button">Volver al inicio</a>
+        </div>
+    </div>
+</body>
+</html>

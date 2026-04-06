@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Lista de Libros{% endblock %}
+{% block content %}
+<h1>Inventario de Libros (Base de Datos)</h1>
+<a href="{{ url_for('inventario.nuevo') }}">➕ Agregar nuevo libro</a>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Autor</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+    </tr>
+    {% for producto in productos %}
+    <tr>
+        <td>{{ producto.id }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.autor }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.cantidad }}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td colspan="5">No hay libros en el inventario</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
